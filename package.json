@@ -1,0 +1,16 @@
+{
+  "name": "chalky-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Chalky colors on a light background",
+  "keywords": [
+    "syntax",
+    "theme",
+    "light"
+  ],
+  "repository": "https://github.com/duien/chalky-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

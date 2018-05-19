@@ -1,0 +1,53 @@
+@import "colors";
+@import "material";
+@import "chalk";
+
+// This defines all syntax variables that syntax themes must implement when they
+// include a syntax-variables.less file.
+
+// General colors
+@syntax-text-color: @chalk-dark;
+@syntax-cursor-color: @chalk-light;
+@syntax-selection-color: @chalk-faint;
+@syntax-background-color: @chalky;
+
+// Guide colors
+@syntax-wrap-guide-color: @chalk-faint;
+@syntax-indent-guide-color: @chalk-faint;
+@syntax-invisible-character-color: mix(@chalk-faint, @chalk-muted, 80%);
+
+// For find and replace markers
+@syntax-result-marker-color: @chalk-muted;
+@syntax-result-marker-color-selected: @chalk-pink;
+
+// Gutter colors
+@syntax-gutter-text-color: @chalk-muted;
+@syntax-gutter-text-color-selected: @chalk-light;
+@syntax-gutter-background-color: @syntax-background-color;
+@syntax-gutter-background-color-selected: @syntax-selection-color;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @chalk-blue;
+@syntax-color-added: @chalk-teal;
+@syntax-color-modified: @chalk-yellow;
+@syntax-color-removed: @chalk-pink;
+
+// My own custom syntax variables
+// (Emacs-inspired)
+
+@syntax-color-builtin: @chalk-light;
+@syntax-color-string: @chalk-teal;
+@syntax-color-regexp: @chalk-blue;
+@syntax-color-keyword: @chalk-pink;
+@syntax-color-function: @chalk-blue;
+@syntax-color-comment: @chalk-muted;
+@syntax-color-variable: @chalk-blue;
+@syntax-color-type: @chalk-yellow;
+@syntax-color-constant: @chalk-yellow;
+@syntax-color-warning: @chalk-pink;
+@syntax-color-numeric: @chalk-pink;
+@syntax-color-punctuation: @chalk-light;
+
+// more
+@syntax-color-symbol: @chalk-blue;
+@syntax-cursor-line-background-color: @chalk-faint-bg;

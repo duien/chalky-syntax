@@ -1,0 +1,102 @@
+// Editor interface
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  // &:not(.is-focused) {
+  //   @unfocused-editor-background: mix(@teal-50, @syntax-gutter-background-color, 25%);
+  //   background: @unfocused-editor-background;
+  //   .gutter {
+  //     background-color: @unfocused-editor-background;
+  //   }
+  // }
+  
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .cursor-line {
+    // background: mix(@purple-50, @syntax-background-color);
+    background: @syntax-cursor-line-background-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      opacity: 1;
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+        background: @syntax-cursor-line-background-color;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-gutter-text-color;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  // TODO Why is this just not working at all?
+  // &.vim-mode-plus.normal-mode.is-focused .cursor {
+  //   color: @light-orange !important;
+  //   background-color: @light-orange !important;
+  // }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+// Use gutter color for non-editable area of Zen mode
+[data-zen="true"] atom-pane-container atom-pane .item-views {
+  // background: @syntax-gutter-background-color !important;
+  background: @syntax-gutter-background-color-selected !important;
+
+  atom-text-editor {
+    // border-left: 1em solid @syntax-background-color;
+    // border-right: 1em solid @syntax-background-color;
+
+    .gutter-container {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+
+atom-text-editor .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .syntax--marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+  background: transparent;
+}
+
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
